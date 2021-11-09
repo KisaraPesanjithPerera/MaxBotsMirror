@@ -33,12 +33,12 @@ class MegaAppListener(MegaListener):
 
     @property
     def speed(self):
-        """Returns speed of the download in bytes/second"""
+        """🔄Returns Speed Of The Download In Bytes/Second"""
         return self.__speed
 
     @property
     def name(self):
-        """Returns name of the download"""
+        """☢️Returns Name Of The Download"""
         return self.__name
 
     def setValues(self, name, size, gid):
@@ -48,7 +48,7 @@ class MegaAppListener(MegaListener):
 
     @property
     def size(self):
-        """Size of download in bytes"""
+        """🔰Size Of Download In Bytes"""
         return self.__size
 
     @property
@@ -56,10 +56,10 @@ class MegaAppListener(MegaListener):
         return self.__bytes_transferred
 
     def onRequestStart(self, api, request):
-        LOGGER.info('Request start ({})'.format(request))
+        LOGGER.info('🔁Request Start ({})'.format(request))
 
     def onRequestFinish(self, api, request, error):
-        LOGGER.info('Mega Request finished ({}); Result: {}'
+        LOGGER.info('🧲Mega Request Finished ({}); Result: {}'
                     .format(request, error))
         if str(error).lower() != "no error":
             self.error = error.copy()
@@ -70,14 +70,14 @@ class MegaAppListener(MegaListener):
         elif request_type == MegaRequest.TYPE_GET_PUBLIC_NODE:
             self.public_node = request.getPublicMegaNode()
         elif request_type == MegaRequest.TYPE_FETCH_NODES:
-            LOGGER.info("Fetching Root Node.")
+            LOGGER.info("🎯Fetching Root Node")
             self.node = api.getRootNode()
             LOGGER.info(f"Node Name: {self.node.getName()}")
         if request_type not in self._NO_EVENT_ON or self.node and "cloud drive" not in self.node.getName().lower():
             self.continue_event.set()
 
     def onRequestTemporaryError(self, api, request, error: MegaError):
-        LOGGER.info(f'Mega Request error in {error}')
+        LOGGER.info(f'📛Mega Request Error In {error}')
         if not self.is_cancelled:
             self.listener.onDownloadError("RequestTempError: " + error.toString())
             self.is_cancelled = True
@@ -106,7 +106,7 @@ class MegaAppListener(MegaListener):
         filen = transfer.getFileName()
         state = transfer.getState()
         errStr = error.toString()
-        LOGGER.info(f'Mega download error in file {transfer} {filen}: {error}')
+        LOGGER.info(f'📛Mega Download Error In File {transfer} {filen}: {error}')
 
         if state == 1 or state == 4:
             # Sometimes MEGA (offical client) can't stream a node either and raises a temp failed error.
@@ -120,7 +120,7 @@ class MegaAppListener(MegaListener):
 
     def cancel_download(self):
         self.is_cancelled = True
-        self.listener.onDownloadError("Download Canceled by user")
+        self.listener.onDownloadError("📥Download Canceled By user")
 
 
 class AsyncExecutor:
@@ -143,7 +143,7 @@ class MegaDownloadHelper:
     @new_thread
     def add_download(mega_link: str, path: str, listener):
         if MEGA_API_KEY is None:
-            raise MegaDownloaderException('Mega API KEY not provided! Cannot mirror mega links')
+            raise MegaDownloaderException('📁Mega API KEY Not Provided! Cannot Mirror Mega Links')
         executor = AsyncExecutor()
         api = MegaApi(MEGA_API_KEY, None, None, 'telegram-mirror-bot')
         global listeners
