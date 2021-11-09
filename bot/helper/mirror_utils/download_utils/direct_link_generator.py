@@ -3,10 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Helper Module containing various sites direct links generators. This module is copied and modified as per need
-from https://github.com/AvinashReddy3108/PaperplaneExtended . I hereby take no credit of the following code other
-than the modifications. See https://github.com/AvinashReddy3108/PaperplaneExtended/commits/master/userbot/modules/direct_links.py
-for original authorship. """
+""" 🧲Helper Module Containing Various Sites Direct Links Generators🎯 """
 
 import json
 import re
@@ -41,7 +38,7 @@ def direct_link_generator(link: str):
 
 
 def zippy_share(url: str) -> str:
-    """ 🔰ZippyShare direct links generator
+    """ 🔰ZippyShare Direct Links Generator
     Based on https://github.com/LameLemon/ziggy"""
     dl_url = ''
     try:
@@ -67,7 +64,7 @@ def zippy_share(url: str) -> str:
 
 
 def yandex_disk(url: str) -> str:
-    """ 🔰Yandex.Disk direct links generator
+    """ 🔰Yandex.Disk Direct Links Generator
     Based on https://github.com/KisaraPesanjithPerera/YadiskDirect"""
     try:
         link = re.findall(r'\bhttps?://.*yadi\.sk\S+', url)[0]
@@ -83,7 +80,7 @@ def yandex_disk(url: str) -> str:
 
 
 def cm_ru(url: str) -> str:
-    """ 🔰cloud.mail.ru direct links generator
+    """ 🔰cloud.mail.ru Direct Links Generator
     Using https://github.com/JrMasterModelBuilder/cmrudl.py"""
     reply = ''
     try:
@@ -102,7 +99,7 @@ def cm_ru(url: str) -> str:
 
 
 def mediafire(url: str) -> str:
-    """ 🔰MediaFire direct links generator """
+    """ 🔰MediaFire Direct Links Generator """
     try:
         link = re.findall(r'\bhttps?://.*mediafire\.com\S+', url)[0]
     except IndexError:
@@ -114,7 +111,7 @@ def mediafire(url: str) -> str:
 
 
 def osdn(url: str) -> str:
-    """ 🔰OSDN direct links generator """
+    """ 🔰OSDN Direct Links Generator """
     osdn_link = 'https://osdn.net'
     try:
         link = re.findall(r'\bhttps?://.*osdn\.net\S+', url)[0]
@@ -133,7 +130,7 @@ def osdn(url: str) -> str:
 
 
 def github(url: str) -> str:
-    """ 🔰GitHub direct links generator """
+    """ 🔰GitHub Direct Links Generator """
     try:
         re.findall(r'\bhttps?://.*github\.com.*releases\S+', url)[0]
     except IndexError:
