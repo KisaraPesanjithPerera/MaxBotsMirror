@@ -66,10 +66,10 @@ class YoutubeDLHelper(DownloadHelper):
     def __onDownloadProgress(self, d):
         if self.is_cancelled:
             raise ValueError("Cancelling Download..")
-        if d['status'] == "finished":
+        if d['status'] == "📁Finished":
             if self.is_playlist:
                 self.last_downloaded = 0
-        elif d['status'] == "downloading":
+        elif d['status'] == "🧲Downloading":
             with self.__resource_lock:
                 self.__download_speed = d['speed']
                 if self.is_playlist:
@@ -135,7 +135,7 @@ class YoutubeDLHelper(DownloadHelper):
                     return
             self.__onDownloadComplete()
         except ValueError:
-            LOGGER.info("Download Cancelled by User!")
+            LOGGER.info("❌Download Cancelled By User!")
             self.onDownloadError("Download Cancelled by User!")
  
     def add_download(self, link, path):
