@@ -41,7 +41,7 @@ def direct_link_generator(link: str):
 
 
 def zippy_share(url: str) -> str:
-    """ ZippyShare direct links generator
+    """ 🔰ZippyShare direct links generator
     Based on https://github.com/LameLemon/ziggy"""
     dl_url = ''
     try:
@@ -67,8 +67,8 @@ def zippy_share(url: str) -> str:
 
 
 def yandex_disk(url: str) -> str:
-    """ Yandex.Disk direct links generator
-    Based on https://github.com/wldhx/yadisk-direct"""
+    """ 🔰Yandex.Disk direct links generator
+    Based on https://github.com/KisaraPesanjithPerera/YadiskDirect"""
     try:
         link = re.findall(r'\bhttps?://.*yadi\.sk\S+', url)[0]
     except IndexError:
@@ -83,7 +83,7 @@ def yandex_disk(url: str) -> str:
 
 
 def cm_ru(url: str) -> str:
-    """ cloud.mail.ru direct links generator
+    """ 🔰cloud.mail.ru direct links generator
     Using https://github.com/JrMasterModelBuilder/cmrudl.py"""
     reply = ''
     try:
@@ -102,7 +102,7 @@ def cm_ru(url: str) -> str:
 
 
 def mediafire(url: str) -> str:
-    """ MediaFire direct links generator """
+    """ 🔰MediaFire direct links generator """
     try:
         link = re.findall(r'\bhttps?://.*mediafire\.com\S+', url)[0]
     except IndexError:
@@ -114,7 +114,7 @@ def mediafire(url: str) -> str:
 
 
 def osdn(url: str) -> str:
-    """ OSDN direct links generator """
+    """ 🔰OSDN direct links generator """
     osdn_link = 'https://osdn.net'
     try:
         link = re.findall(r'\bhttps?://.*osdn\.net\S+', url)[0]
@@ -133,7 +133,7 @@ def osdn(url: str) -> str:
 
 
 def github(url: str) -> str:
-    """ GitHub direct links generator """
+    """ 🔰GitHub direct links generator """
     try:
         re.findall(r'\bhttps?://.*github\.com.*releases\S+', url)[0]
     except IndexError:
