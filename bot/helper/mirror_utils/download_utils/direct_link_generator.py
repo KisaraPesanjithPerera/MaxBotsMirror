@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" 🧲Helper Module Containing Various Sites Direct Links Generators🎯 """
+""" 🧲Helper Module Containing Various Sites Direct Links Generators.✒️Please Save The ©️ Copyright.⚜️𝐏𝐨𝐰𝐞𝐫𝐝 𝐁𝐲 @MaX_Bots """
 
 import json
 import re
