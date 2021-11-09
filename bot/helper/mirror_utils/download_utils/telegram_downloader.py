@@ -52,7 +52,7 @@ class TelegramDownloadHelper(DownloadHelper):
 
     def __onDownloadProgress(self, current, total):
         if self.__is_cancelled:
-            self.__onDownloadError('Cancelled by user!')
+            self.__onDownloadError('❌Cancelled By User!')
             self.__user_bot.stop_transmission()
             return
         with self.__resource_lock:
@@ -99,7 +99,7 @@ class TelegramDownloadHelper(DownloadHelper):
 
             if download:
                 self.__onDownloadStart(media.file_name, media.file_size, media.file_id)
-                LOGGER.info(f'Downloading telegram file with id: {media.file_id}')
+                LOGGER.info(f'📥Downloading Telegram File With Id: {media.file_id}')
                 threading.Thread(target=self.__download, args=(_message, path)).start()
             else:
                 self.__onDownloadError('File already being downloaded!')
