@@ -65,7 +65,7 @@ class YoutubeDLHelper(DownloadHelper):
  
     def __onDownloadProgress(self, d):
         if self.is_cancelled:
-            raise ValueError("Cancelling Download..")
+            raise ValueError("📥Cancelling Download..")
         if d['status'] == "📁Finished":
             if self.is_playlist:
                 self.last_downloaded = 0
